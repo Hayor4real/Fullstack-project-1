@@ -1,11 +1,13 @@
 var express = require("express");
 var mongodb = require("mongodb");
+var cors = require("cors");
 const mongoClient = mongodb.MongoClient;
 
 var dburl =
   "mongodb+srv://userperson:October18@cluster0.udsj0gg.mongodb.net/?retryWrites=true&w=majority";
 
 var route = express();
+route.use(cors());
 
 route.get("/productdb", (req, res) => {
   mongoClient.connect(dburl, (err, cluster) => {
