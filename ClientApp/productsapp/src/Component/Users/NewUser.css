@@ -1,0 +1,17 @@
+.formContainer {
+  width: 500px;
+  margin: 50px auto;
+  padding: 50px;
+  box-shadow: 0 0 10px black;
+  text-align: center;
+}
+
+input {
+  padding: 10px;
+  width: 70%;
+  border-radius: 10px;
+  outline: none;
+}
+.formContainer div {
+  margin: 15px;
+}

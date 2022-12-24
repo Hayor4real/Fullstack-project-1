@@ -1,0 +1,121 @@
+import { useState } from "react";
+import "./NewUser.css";
+
+function NewUser(props) {
+  const [newuser, setNewUser] = useState({
+    name: "",
+    price: "",
+    rating: "",
+    description: "",
+    category: "",
+    supply: "",
+  });
+
+  const sendDataToServer = () => {
+    fetch("http://localhost:4001/users/newuser", {
+      method: "POST",
+      body: JSON.stringify(newuser),
+      headers: {
+        "CONTENT-TYPE": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        alert("Inserted data sucessfully");
+        setNewUser({
+          name: "",
+          price: "",
+          rating: "",
+          description: "",
+          category: "",
+          supply: "",
+        });
+      });
+  };
+  return (
+    <div className="formContainer">
+      <h2>Register Product </h2>
+      <div>
+        <div>
+          <input
+            type="text"
+            placeholder="Enter Name"
+            onChange={(event) => {
+              setNewUser({
+                ...newuser,
+                name: event.target.value,
+              });
+            }}
+          />
+        </div>
+
+        <div>
+          <input
+            type="text"
+            placeholder="Enter Price"
+            onChange={(event) => {
+              setNewUser({
+                ...newuser,
+                price: event.target.value,
+              });
+            }}
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            placeholder="Enter Rating"
+            onChange={(event) => {
+              setNewUser({
+                ...newuser,
+                rating: event.target.value,
+              });
+            }}
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            placeholder="Enter Description"
+            onChange={(event) => {
+              setNewUser({
+                ...newuser,
+                description: event.target.value,
+              });
+            }}
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            placeholder="Enter Category"
+            onChange={(event) => {
+              setNewUser({
+                ...newuser,
+                category: event.target.value,
+              });
+            }}
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            placeholder="Enter Supply"
+            onChange={(event) => {
+              setNewUser({
+                ...newuser,
+                supply: event.target.value,
+              });
+            }}
+          />
+        </div>
+      </div>
+      <div>
+        <button onClick={sendDataToServer}>Register New User</button>
+      </div>
+    </div>
+  );
+}
+
+export default NewUser;
