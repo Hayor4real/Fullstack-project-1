@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Users(props) {
   const [users, setUsers] = useState([]);
@@ -13,10 +14,18 @@ function Users(props) {
         setUsers(data.results);
       });
   };
-
-  const latestData = () => {
-    getData();
+  const deleteData = (id) => {
+    fetch(`http://localhost:4001/users/delete/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        alert(data.msg);
+        getData();
+      });
   };
+
   return (
     <div style={{ padding: "50px" }}>
       <h2>Users Informations</h2>
@@ -85,13 +94,23 @@ function Users(props) {
                   <td>{ele.category}</td>
                   <td>{ele.supply}</td>
                   <td>
-                    <button>Details</button>
+                    <Link to={`/userdetails/${ele._id}`}>
+                      <button>Details</button>
+                    </Link>
                   </td>
                   <td>
-                    <button>Edit</button>
+                    <Link to={`/updateuser/${ele._id}`}>
+                      <button>Edit</button>
+                    </Link>
                   </td>
                   <td>
-                    <button>Delete</button>
+                    <button
+                      onClick={() => {
+                        deleteData(ele._id);
+                      }}
+                    >
+                      Delete
+                    </button>
                   </td>
                 </tr>
               );

@@ -1,5 +1,7 @@
 var express = require("express");
-var { MongoClient } = require("mongodb");
+var { MongoClient, ObjectId } = require("mongodb");
+const dbname = "test";
+const collectionname = "products";
 
 var dburl =
   "mongodb+srv://userperson:October18@cluster0.udsj0gg.mongodb.net/?retryWrites=true&w=majority";
@@ -54,5 +56,99 @@ routes.post("/newuser", (req, res) => {
     });
   });
 }); //http://localhost:4001/users/newuser
+
+routes.get("/specificuser/:id", (req, res) => {
+  var id = req.params.id;
+  MongoClient.connect(dburl, (err, cluster) => {
+    if (err) {
+      res.json({
+        OK: false,
+        msg: "Error while connecting with database",
+      });
+    } else {
+      var dbRef = cluster.db(dbname);
+      var collRef = dbRef.collection(collectionname);
+      collRef
+        .find({
+          _id: ObjectId(id),
+        })
+        .toArray((err, data) => {
+          if (err) {
+            res.json({
+              OK: false,
+              msg: "Error while fetching the data",
+            });
+          } else {
+            res.json({
+              OK: true,
+              results: data,
+            });
+          }
+        });
+    }
+  });
+}); //http://localhost:4001/users/specificuser/<id>
+
+routes.put("/updateuser/:id", (req, res) => {
+  var id = req.params.id;
+  MongoClient.connect(dburl, (err, cluster) => {
+    if (err) {
+      res.json({
+        OK: false,
+        msg: "Error while connecting with database",
+      });
+    } else {
+      var dbRef = cluster.db(dbname);
+      var collRef = dbRef.collection(collectionname);
+      collRef.updateOne(
+        { _id: ObjectId(id) },
+        {
+          $set: req.body,
+        },
+        (err, data) => {
+          if (err) {
+            res.json({
+              OK: false,
+              msg: "Failed to Update Information",
+            });
+          } else {
+            res.json({
+              Ok: true,
+              msg: "Updated sucessfully",
+            });
+          }
+        }
+      );
+    }
+  });
+}); //http://localhost:4001/users/updateuser
+
+routes.delete("/delete/:id", (req, res) => {
+  var id = req.params.id;
+  MongoClient.connect(dburl, (err, cluster) => {
+    if (err) {
+      res.json({
+        OK: false,
+        msg: "Error while connecting with database",
+      });
+    } else {
+      var dbRef = cluster.db(dbname);
+      var collRef = dbRef.collection(collectionname);
+      collRef.deleteOne({ _id: ObjectId(id) }, (err, data) => {
+        if (err) {
+          res.json({
+            OK: false,
+            msg: "Failed to Delete Information",
+          });
+        } else {
+          res.json({
+            Ok: true,
+            msg: "Deleted Successfully",
+          });
+        }
+      });
+    }
+  });
+}); //http://localhost:4001/users/delete/
 
 module.exports = routes;
