@@ -8,8 +8,9 @@ var cardStyle = {
   boxShadow: "0 0 10px black",
   textAlign: "center",
   height: "100%",
-  color: "blue",
+  color: "white",
   borderRadius: "30px",
+  backgroundColor: "blue",
 };
 
 const UserDetails = (props) => {

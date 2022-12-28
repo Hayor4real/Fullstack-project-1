@@ -1,17 +1,30 @@
+h2 {
+  color: lightblue;
+}
+
 .formContainer {
-  width: 500px;
+  width: 1000px;
   margin: 50px auto;
   padding: 50px;
   box-shadow: 0 0 10px black;
   text-align: center;
+  height: 700px;
 }
 
 input {
-  padding: 10px;
-  width: 70%;
+  padding: 20px;
+  width: 90%;
   border-radius: 10px;
   outline: none;
 }
 .formContainer div {
-  margin: 15px;
+  margin: 2rem;
+}
+
+button {
+  background-color: lightskyblue;
+  width: 90%;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
 }

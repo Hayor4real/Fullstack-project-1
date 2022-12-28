@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import "./NewUser.css";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 function UpdateUser(props) {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     name: "",
     price: "",
@@ -48,6 +49,7 @@ function UpdateUser(props) {
           supply: "",
         });
       });
+    navigate("/users");
   };
   return (
     <div className="formContainer">
