@@ -1,0 +1,51 @@
+.container {
+  width: 90%;
+  align-items: center;
+  margin: auto auto;
+
+  padding: 5rem;
+}
+.container h3 {
+  text-align: center;
+  padding-top: 8px;
+  margin: 4px auto;
+}
+
+.row1,
+.addressRow,
+.infoPlace {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1em;
+}
+
+.inputFirst,
+.inputSecond,
+.countryInfo,
+.streetAddress1,
+.streetAddress2,
+.city,
+.state,
+.code,
+.infoBtn {
+  margin: 1em;
+}
+
+.container .countryInfo {
+  width: 95%;
+}
+
+/* .inputFirst,
+.inputSecond {
+  margin: 2em;
+} */
+
+.infoBtn {
+  width: 100%;
+  padding: 2em;
+  outline: none;
+}
+.infoBtn {
+  background-color: black;
+  color: white;
+}

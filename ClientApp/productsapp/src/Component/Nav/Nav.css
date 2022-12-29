@@ -2,10 +2,26 @@
   padding: 15px;
   background-color: black;
   text-align: right;
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 
 a {
   color: white;
   text-decoration: none;
-  margin-right: 50px;
+  margin-right: 60px;
+}
+.cart-count {
+  position: absolute;
+  left: 94.5em;
+  position: fixed;
+  z-index: 1;
+  top: 1px;
+  background-color: white;
+  color: black;
+  padding: 5px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
 }

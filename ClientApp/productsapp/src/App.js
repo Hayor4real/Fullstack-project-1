@@ -6,6 +6,11 @@ import { Routes, Route } from "react-router-dom";
 import Nav from "./Component/Nav/Nav";
 import UserDetails from "./Component/Users/UserDetails";
 import UpdateUser from "./Component/Users/Userupdate";
+import Cart from "./Component/Pages/cart/Cart";
+import Payment from "./Component/Payment/Payment";
+import Homepage from "./Component/Pages/Homepage/Homepage";
+import CheckOut from "./Component/Checkout/Checkout";
+import Main from "./Component/About/Main";
 
 function App() {
   return (
@@ -17,14 +22,18 @@ function App() {
           path="/"
           element={
             <div style={{ textAlign: "center", color: "red" }}>
-              <h2>Home Component</h2>
+              <Main />
             </div>
           }
         />
+        <Route path="/homepage" element={<Homepage />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/users" element={<Users />} />
         <Route path="/newuser" element={<NewUser />} />
         <Route path="/userdetails/:id" element={<UserDetails />} />
         <Route path="/updateuser/:id" element={<UpdateUser />} />
+        <Route path="/checkout" element={<CheckOut />} />
+        <Route path="/payment" element={<Payment />}></Route>
       </Routes>
     </div>
   );
