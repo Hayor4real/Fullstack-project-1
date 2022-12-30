@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { Cartcontext } from "../../context/Context";
+import { FaShoppingCart } from "react-icons/fa";
 import "./Nav.css";
 
 function Nav() {
@@ -10,18 +11,23 @@ function Nav() {
   // const dispatch = Globalstate.dispatch;
   return (
     <div className="navContainer">
-      <Link to="/">Home</Link>
+      <div>
+        <Link to="/homepage">Shop</Link>
+      </div>
+      <div>
+        <Link to="/">Home</Link>
 
-      <Link to="cart">
-        Cart
-        {state.length > 0 && (
-          <div className="cart-count">
-            <span>{state.length}</span>
-          </div>
-        )}
-      </Link>
-      <Link to="/users">Products</Link>
-      <Link to="/newuser">New Products</Link>
+        <Link to="cart">
+          <FaShoppingCart color="white" fontSize="20px" />
+          {state.length > 0 && (
+            <div className="cart-count">
+              <span>{state.length}</span>
+            </div>
+          )}
+        </Link>
+        <Link to="/users">Products</Link>
+        <Link to="/newuser">New Products</Link>
+      </div>
     </div>
   );
 }

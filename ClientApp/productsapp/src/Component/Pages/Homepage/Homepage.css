@@ -43,7 +43,6 @@ h3 {
 }
 
 :hover.btn {
-  transform: scale(1);
   background-color: rgba(red, green, rgb(4, 4, 105), alpha);
   cursor: pointer;
   transform: scale(1.1);

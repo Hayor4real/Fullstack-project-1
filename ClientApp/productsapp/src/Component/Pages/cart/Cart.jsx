@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Cartcontext } from "../../../context/Context";
 import { Link } from "react-router-dom";
+import { AiFillDelete } from "react-icons/ai";
 import "./Cart.css";
 
 const Cart = () => {
@@ -43,7 +44,7 @@ const Cart = () => {
               className="cancel"
               onClick={() => dispatch({ type: "REMOVE", payload: item })}
             >
-              x
+              <AiFillDelete color="black" fontSize="25px" />
             </h2>
           </div>
         );

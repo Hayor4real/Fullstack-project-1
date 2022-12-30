@@ -1,7 +1,9 @@
 import { useState } from "react";
 import "./NewUser.css";
+import { useNavigate } from "react-router-dom";
 
 function NewUser(props) {
+  const navigate = useNavigate();
   const [newuser, setNewUser] = useState({
     name: "",
     price: "",
@@ -32,6 +34,7 @@ function NewUser(props) {
           supply: "",
         });
       });
+    navigate("/users");
   };
   return (
     <div className="formContainer">

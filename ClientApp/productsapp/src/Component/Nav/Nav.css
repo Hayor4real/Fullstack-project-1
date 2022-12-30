@@ -1,16 +1,25 @@
 .navContainer {
-  padding: 15px;
+  padding: 19px;
   background-color: black;
   text-align: right;
   position: sticky;
   top: 0;
   left: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 a {
   color: white;
   text-decoration: none;
   margin-right: 60px;
+  font-size: 1em;
+}
+
+.navContainer a:hover {
+  text-decoration: underline;
+  color: blanchedalmond;
+  font-weight: bold;
 }
 .cart-count {
   position: absolute;
@@ -21,7 +30,7 @@ a {
   background-color: white;
   color: black;
   padding: 5px;
-  width: 10px;
+  width: 15px;
   border-radius: 50%;
   display: inline-block;
 }

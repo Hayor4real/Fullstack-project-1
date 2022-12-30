@@ -24,7 +24,9 @@ const Homepage = () => {
           <div className="card" key={index}>
             <img src={item.image} alt="" />
             <p>{item.title}</p>
-            <h3>$. {item.price}</h3>
+            <h3>${item.price}</h3>
+            <p>{item.category}</p>
+
             <button
               className="btn"
               onClick={() => dispatch({ type: "ADD", payload: item })}
