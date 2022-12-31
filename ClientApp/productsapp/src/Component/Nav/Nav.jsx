@@ -16,7 +16,8 @@ function Nav() {
       </div>
       <div>
         <Link to="/">Home</Link>
-
+        <Link to="/users">Products</Link>
+        <Link to="/newuser">New Products</Link>
         <Link to="cart">
           <FaShoppingCart color="white" fontSize="20px" />
           {state.length > 0 && (
@@ -25,8 +26,6 @@ function Nav() {
             </div>
           )}
         </Link>
-        <Link to="/users">Products</Link>
-        <Link to="/newuser">New Products</Link>
       </div>
     </div>
   );

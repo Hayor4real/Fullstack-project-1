@@ -10,6 +10,7 @@
 }
 
 .home .card {
+  margin-bottom: 1px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -19,6 +20,11 @@
   border-radius: 20px;
   color: black;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+}
+:hover.card {
+  opacity: 6;
+  visibility: visible;
+  -webkit-filter: brightness(4px);
 }
 
 img {
