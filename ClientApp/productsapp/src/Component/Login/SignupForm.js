@@ -1,6 +1,9 @@
 import React from "react";
 
 const SignupForm = () => {
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+  };
   return (
     <div className="container">
       <div className="app-wrapper">
@@ -21,7 +24,9 @@ const SignupForm = () => {
             <input className="input" type="password" />
           </div>
           <div>
-            <button className="submit">Sign Up</button>
+            <button className="submit" onClick={handleFormSubmit}>
+              Sign Up
+            </button>
           </div>
         </form>
       </div>
