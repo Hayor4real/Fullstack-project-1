@@ -68,6 +68,7 @@ const Cart = () => {
           <h2>
             {" "}
             <div className="totalValue">
+              <button className="btn">CheckOut</button>
               <div>
                 <span>Subtotal : ${Math.round(total)}</span>
               </div>

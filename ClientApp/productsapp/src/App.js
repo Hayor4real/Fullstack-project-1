@@ -11,7 +11,7 @@ import Payment from "./Component/Payment/Payment";
 import Homepage from "./Component/Pages/Homepage/Homepage";
 import CheckOut from "./Component/Checkout/Checkout";
 import Main from "./Component/About/Main";
-import Form from "./Component/Checkout/Form";
+import Login from "./Component/Login/Login";
 
 function App() {
   return (
@@ -36,7 +36,7 @@ function App() {
         <Route path="/updateuser/:id" element={<UpdateUser />} />
         <Route path="/checkout" element={<CheckOut />} />
         <Route path="/payment" element={<Payment />}></Route>
-        <Route path="/form" element={<Form />}></Route>
+        <Route path="/login" element={<Login />}></Route>
       </Routes>
     </div>
   );
