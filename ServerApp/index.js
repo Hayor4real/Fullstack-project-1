@@ -3,12 +3,19 @@ var mongodb = require("mongodb");
 var cors = require("cors");
 const mongoClient = mongodb.MongoClient;
 var userRouter = require("./Routes/Users/User");
+const { application } = require("express");
 
 var dburl =
   "mongodb+srv://userperson:October18@cluster0.udsj0gg.mongodb.net/?retryWrites=true&w=majority";
 
 var route = express();
 route.use(cors());
+// route.use(
+//   cors({
+//     origin: "http://localhost:3000",
+//     credentials: true,
+//   })
+// );
 route.use(express.json());
 
 route.use("/users", userRouter);
