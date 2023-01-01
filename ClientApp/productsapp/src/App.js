@@ -37,6 +37,7 @@ function App() {
         <Route path="/checkout" element={<CheckOut />} />
         <Route path="/payment" element={<Payment />}></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/signin" element={<Login />}></Route>
       </Routes>
     </div>
   );

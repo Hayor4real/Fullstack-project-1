@@ -33,7 +33,7 @@ route.get("/productdb", (req, res) => {
       });
     }
   });
-}); //http://localhost:4001/productdb
+});
 
 route.listen(4001, () => {
   console.log("NodeJS server started");

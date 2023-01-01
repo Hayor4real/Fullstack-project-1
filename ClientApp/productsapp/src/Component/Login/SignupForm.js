@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import validation from "./validation";
 
-const SignupForm = () => {
+const SignupForm = ({ submitForm }) => {
   const [values, setValues] = useState({
     fullname: "",
     email: "",
@@ -8,6 +9,7 @@ const SignupForm = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [dataIsCorrect, setDataIsCorrect] = useState(false);
   const handleChange = (event) => {
     setValues({
       ...values,
@@ -16,9 +18,16 @@ const SignupForm = () => {
   };
   const handleFormSubmit = (event) => {
     event.preventDefault();
+    setErrors(validation(values));
+    setDataIsCorrect(true);
   };
+  useEffect(() => {
+    if (Object.keys(errors).length === 0 && dataIsCorrect) {
+      submitForm(true);
+    }
+  }, [errors]);
   return (
-    <div className="container">
+    <div className="content">
       <div className="app-wrapper">
         <div>
           <h2 className="title">Create Account</h2>
@@ -33,6 +42,7 @@ const SignupForm = () => {
               value={values.fullname}
               onChange={handleChange}
             />
+            {errors.fullname && <p className="error">{errors.fullname}</p>}
           </div>
           <div className="email">
             <label className="label">Email</label>
@@ -43,6 +53,7 @@ const SignupForm = () => {
               value={values.email}
               onChange={handleChange}
             />
+            {errors.email && <p className="error">{errors.email}</p>}
           </div>
           <div className="password">
             <label className="label">Password</label>
@@ -53,6 +64,7 @@ const SignupForm = () => {
               value={values.password}
               onChange={handleChange}
             />
+            {errors.password && <p className="error">{errors.password}</p>}
           </div>
           <div>
             <button className="submit" onClick={handleFormSubmit}>
