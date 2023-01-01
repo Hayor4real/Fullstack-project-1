@@ -62,26 +62,24 @@ const Cart = () => {
       )}
       {state.length > 0 && (
         <div className="total">
+          <div></div>
           <Link to="/checkout">
             <button className="btn">CheckOut</button>
-          </Link>
-          <h2>
-            {" "}
-            <div className="totalValue">
-              <Link to="/signin">
-                <button className="btn">CheckOut</button>
-              </Link>
-              <div>
-                <span>Subtotal : ${Math.round(total)}</span>
-              </div>
-              <div>
-                <span>Shipping Fee : $5</span>
-              </div>
-              <div>
-                <span>Order Total : ${Math.round(total + Shipping)}</span>
-              </div>
+          </Link>{" "}
+          <div className="totalValue">
+            <Link to="/signin">
+              <button className="btn">Create Account</button>
+            </Link>
+            <div>
+              <span>Subtotal : ${Math.round(total)}</span>
             </div>
-          </h2>
+            <div>
+              <span>Shipping Fee : $5</span>
+            </div>
+            <div>
+              <span>Order Total : ${Math.round(total + Shipping)}</span>
+            </div>
+          </div>
         </div>
       )}
     </div>

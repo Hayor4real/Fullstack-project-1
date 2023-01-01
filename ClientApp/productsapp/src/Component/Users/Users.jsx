@@ -28,7 +28,7 @@ function Users(props) {
 
   return (
     <div style={{ padding: "50px" }}>
-      <h2>Users Informations</h2>
+      <h2 style={{ color: "black" }}>Users Informations</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
         quas facere, rem, at nesciunt soluta, commodi cumque quaerat provident
@@ -38,21 +38,6 @@ function Users(props) {
         temporibus nulla at perferendis deserunt eligendi unde amet ipsum
         repellendus. Sit sunt adipisci beatae aperiam iusto architecto tenetur
         eligendi voluptatem doloremque nostrum. Ea fugiat molestias ullam, sint
-        consequatur accusamus qui atque voluptatibus tempora quod quidem magnam
-        aliquam ducimus ipsam blanditiis aliquid possimus suscipit quia
-        excepturi temporibus cupiditate. Porro saepe aliquam est, vitae quasi
-        laborum velit quas distinctio nihil eveniet voluptas similique
-        reprehenderit hic, voluptatibus beatae amet soluta in at dolores
-        numquam, corrupti repellendus ullam harum incidunt! Excepturi
-        consectetur accusantium eveniet quae, dolorem molestias atque dicta
-        consequuntur autem dolores mollitia porro eos! Animi dolorum eveniet
-        tempora enim dolores earum odit sint velit, obcaecati, totam error
-        fugiat cum pariatur labore perspiciatis dolorem dolore laborum sequi
-        porro corrupti nobis perferendis nemo blanditiis! Velit inventore
-        assumenda a laborum quo voluptatem iure minima magnam, totam labore
-        aliquam, architecto corporis aperiam temporibus dicta asperiores
-        cupiditate! Ratione fugit nam omnis, commodi laudantium quia ea fugiat
-        dolorum nulla eveniet.
       </p>
       {/* <button onClick={latestData}>Users</button> */}
       {users.length > 0 ? (
