@@ -48,6 +48,11 @@ h3 {
   color: white;
 }
 
+.btn:disabled {
+  background-color: red;
+  color: black;
+}
+
 :hover.btn {
   background-color: rgba(red, green, rgb(4, 4, 105), alpha);
   cursor: pointer;

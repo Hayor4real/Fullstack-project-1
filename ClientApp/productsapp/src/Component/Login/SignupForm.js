@@ -66,10 +66,8 @@ const SignupForm = ({ submitForm }) => {
             />
             {errors.password && <p className="error">{errors.password}</p>}
           </div>
-          <div>
-            <button className="submit" onClick={handleFormSubmit}>
-              Sign Up
-            </button>
+          <div className="submitForm">
+            <button sonClick={handleFormSubmit}>Sign Up</button>
           </div>
         </form>
       </div>

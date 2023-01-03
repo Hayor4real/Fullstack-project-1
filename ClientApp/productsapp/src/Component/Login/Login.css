@@ -6,8 +6,7 @@
   text-align: center;
   color: red;
 }
-
-.submit {
+.submitForm button {
   display: flex;
   text-transform: uppercase;
   font-size: 20px;
