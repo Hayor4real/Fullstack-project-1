@@ -21,29 +21,10 @@ const Cart = () => {
         <h4 className="empty">Cart is Empty</h4>
       ) : (
         <div>
-          <table
-            style={
-              {
-                // width: "100%",
-                // margin: "50px auto",
-              }
-            }
-          >
-            <thead
-              style={{
-                // backgroundColor: "black",
-                paddingRight: "2em",
-              }}
-            >
-              <tr
-                style={{
-                  backgroundColor: "black",
-                  marginRight: "7rem",
-                  color: "white",
-                  cellPadding: "7px",
-                }}
-              >
-                <th marginRight="0">Product</th>
+          <table>
+            <thead>
+              <tr>
+                <th>Product</th>
                 <th>Name</th>
                 <th>Category</th>
                 <th>Price</th>
@@ -51,65 +32,66 @@ const Cart = () => {
                 <th>Remove</th>
               </tr>
             </thead>
+
             <tbody align="center">
               {state.map((item, index) => {
                 return (
                   <tr>
-                    <div className="card" key={index}>
-                      <td>
-                        {" "}
-                        <img src={item.image} alt="" />
-                      </td>
+                    {/* <div className="card" key={index}> */}
+                    <td>
+                      {" "}
+                      <img src={item.image} alt="" />
+                    </td>
 
-                      <td>
-                        {" "}
-                        <p>{item.title}</p>
-                      </td>
+                    <td>
+                      {" "}
+                      <p>{item.title}</p>
+                    </td>
 
-                      <td>
-                        {" "}
-                        <p>{item.category}</p>
-                      </td>
+                    <td>
+                      {" "}
+                      <p>{item.category}</p>
+                    </td>
 
-                      <td>
-                        {" "}
-                        <p>$ {item.quantity * item.price}</p>
-                      </td>
+                    <td>
+                      {" "}
+                      <p>$ {item.quantity * item.price}</p>
+                    </td>
 
-                      <td>
-                        <div className="quantity">
-                          <button
-                            onClick={() =>
-                              dispatch({ type: "INCREASE", payload: item })
-                            }
-                          >
-                            +
-                          </button>
-                          <p>{item.quantity}</p>
-                          <button
-                            onClick={() => {
-                              if (item.quantity > 1) {
-                                dispatch({ type: "DECREASE", payload: item });
-                              } else {
-                                dispatch({ type: "REMOVE", payload: item });
-                              }
-                            }}
-                          >
-                            -
-                          </button>
-                        </div>
-                      </td>
-                      <td>
-                        <h2
-                          className="cancel"
+                    <td>
+                      <div className="quantity">
+                        <button
                           onClick={() =>
-                            dispatch({ type: "REMOVE", payload: item })
+                            dispatch({ type: "INCREASE", payload: item })
                           }
                         >
-                          <AiFillDelete color="black" fontSize="25px" />
-                        </h2>
-                      </td>
-                    </div>
+                          +
+                        </button>
+                        <p>{item.quantity}</p>
+                        <button
+                          onClick={() => {
+                            if (item.quantity > 1) {
+                              dispatch({ type: "DECREASE", payload: item });
+                            } else {
+                              dispatch({ type: "REMOVE", payload: item });
+                            }
+                          }}
+                        >
+                          -
+                        </button>
+                      </div>
+                    </td>
+                    <td>
+                      <h2
+                        className="cancel"
+                        onClick={() =>
+                          dispatch({ type: "REMOVE", payload: item })
+                        }
+                      >
+                        <AiFillDelete className="delete" />
+                      </h2>
+                    </td>
+                    {/* </div> */}
                   </tr>
                 );
               })}
@@ -119,14 +101,10 @@ const Cart = () => {
       )}
       {state.length > 0 && (
         <div className="total">
-          <div></div>
           <Link to="/checkout">
             <button className="btn">CheckOut</button>
           </Link>{" "}
           <div className="totalValue">
-            <Link to="/signin">
-              <button className="btn">Create Account</button>
-            </Link>
             <div>
               <span>Subtotal : ${Math.round(total)}</span>
             </div>

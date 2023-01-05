@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import validation from "./validation";
+import "./Login.css";
 
 const SignupForm = ({ submitForm }) => {
   const [values, setValues] = useState({
@@ -67,7 +68,7 @@ const SignupForm = ({ submitForm }) => {
             {errors.password && <p className="error">{errors.password}</p>}
           </div>
           <div className="submitForm">
-            <button sonClick={handleFormSubmit}>Sign Up</button>
+            <button onClick={handleFormSubmit}>Sign Up</button>
           </div>
         </form>
       </div>

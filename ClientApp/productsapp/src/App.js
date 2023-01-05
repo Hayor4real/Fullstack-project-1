@@ -12,6 +12,7 @@ import Homepage from "./Component/Pages/Homepage/Homepage";
 import CheckOut from "./Component/Checkout/Checkout";
 import Main from "./Component/About/Main";
 import Login from "./Component/Login/Login";
+import Contact from "./Component/Contact/Contact";
 
 function App() {
   return (
@@ -36,8 +37,9 @@ function App() {
         <Route path="/updateuser/:id" element={<UpdateUser />} />
         <Route path="/checkout" element={<CheckOut />} />
         <Route path="/payment" element={<Payment />}></Route>
-        <Route path="/login" element={<Login />}></Route>
+        {/* <Route path="/login" element={<Login />}></Route> */}
         <Route path="/signin" element={<Login />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
       </Routes>
     </div>
   );

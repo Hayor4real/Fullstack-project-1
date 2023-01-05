@@ -3,6 +3,7 @@
   grid-template-columns: repeat(5, 1fr);
   padding: 100px;
   gap: 100px;
+
 }
 .card h3 {
   /* text-align: center; */
@@ -19,6 +20,7 @@
   background-color: white;
   border-radius: 20px;
   color: black;
+  width: 120%;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
 }
 :hover.card {
@@ -57,4 +59,8 @@ h3 {
   background-color: rgba(red, green, rgb(4, 4, 105), alpha);
   cursor: pointer;
   transform: scale(1.1);
+}
+
+.category {
+  font-weight: bold;
 }
