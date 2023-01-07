@@ -1,4 +1,3 @@
-// import Products from "./Component/Products";
 import "./App.css";
 import Users from "./Component/Users/Users";
 import NewUser from "./Component/Users/NewUser";
@@ -7,17 +6,16 @@ import Nav from "./Component/Nav/Nav";
 import UserDetails from "./Component/Users/UserDetails";
 import UpdateUser from "./Component/Users/Userupdate";
 import Cart from "./Component/Pages/cart/Cart";
-import Payment from "./Component/Payment/Payment";
 import Homepage from "./Component/Pages/Homepage/Homepage";
 import CheckOut from "./Component/Checkout/Checkout";
 import Main from "./Component/About/Main";
 import Login from "./Component/Login/Login";
 import Contact from "./Component/Contact/Contact";
+import SingleProduct from "./Component/Products/SingleProduct";
 
 function App() {
   return (
     <div className="App">
-      {/* <Products /> */}
       <Nav />
       <Routes>
         <Route
@@ -36,9 +34,8 @@ function App() {
         <Route path="/userdetails/:id" element={<UserDetails />} />
         <Route path="/updateuser/:id" element={<UpdateUser />} />
         <Route path="/checkout" element={<CheckOut />} />
-        <Route path="/payment" element={<Payment />}></Route>
-        {/* <Route path="/login" element={<Login />}></Route> */}
-        <Route path="/signin" element={<Login />}></Route>
+        <Route path="/products/:id" element={<SingleProduct />}></Route>
+        <Route path="/payment" element={<Login />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
       </Routes>
     </div>

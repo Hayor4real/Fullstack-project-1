@@ -1,42 +1,109 @@
-.navContainer {
-  padding: 12px;
-  background-color: black;
-  text-align: right;
-  position: sticky;
-  padding-right: 50px;
-  top: 0;
-  /* padding-top: 30px; */
-  left: 0;
-  height: 30px;
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap");
+/* * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Titillium Web", sans-serif;
+} */
+nav {
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  background-color: #1b2430;
+  padding: 20px 80px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
 }
 
-a {
-  color: white;
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navbar li {
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
+}
+
+#navbar li a,
+.navEnd {
   text-decoration: none;
-  margin-right: 60px;
-  font-size: 1em;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+  transition: 0.3s ease-in-out;
 }
 
-.navContainer a:hover {
-  text-decoration: underline;
-  color: blanchedalmond;
-  font-weight: bold;
+#navbar li a:hover {
+  color: #17cf97;
+}
+
+#navbar li a:hover::after {
+  content: "";
+  width: 30%;
+  height: 2px;
+  background-color: #17cf97;
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+}
+#mobile {
+  color: white;
+  width: 10%;
+  background-color: #1b2430;
+  color: white;
+  border: none;
+}
+#mobile {
+  display: none;
 }
 
 .cart-count span {
   position: absolute;
-  right: -1;
+  font-size: 15px;
+  right: 100px;
   position: fixed;
   z-index: 1;
+  /* left: 1; */
   top: 1px;
   text-align: center;
   margin-top: 1px;
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
   padding: 5px;
   width: 15px;
   border-radius: 50%;
   display: inline-block;
+}
+
+@media screen and (max-width: 769px) {
+  #navbar {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+    top: 90px;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background-color: #2a3239;
+    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+    padding: 40px 0 0 10px;
+    transition: 0.3s ease-in-out;
+  }
+  #navbar li {
+    margin-bottom: 25px;
+  }
+
+  #navbar.active {
+    right: 0px;
+  }
+  #mobile {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+  }
 }

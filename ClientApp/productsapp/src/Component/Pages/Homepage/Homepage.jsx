@@ -1,9 +1,12 @@
 import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Homepage.css";
 import axios from "axios";
 import { AiFillStar } from "react-icons/ai";
 
 import { Cartcontext } from "../../../context/Context";
+import { NavLink } from "react-router-dom";
+import SingleProduct from "../../Products/SingleProduct";
 
 const Homepage = () => {
   const [data, setdata] = useState([]);
@@ -33,12 +36,15 @@ const Homepage = () => {
               <AiFillStar />
             </p>
             <p>reviews {item.rating.count}</p>
-            <button
+            {/* <button
               className="btn"
               onClick={() => dispatch({ type: "ADD", payload: item })}
             >
               add to cart
-            </button>
+            </button> */}
+            <Link to={`/products/${item.id}`}>
+              <button className="details">Buy Now</button>
+            </Link>
           </div>
         );
       })}

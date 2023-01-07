@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import SignupForm from "./SignupForm";
-import Payment from "../Payment/Payment";
+
 import Homepage from "../Pages/Homepage/Homepage";
-// import SignupFormSucess from "./SignupFormSucess";
+import SignupFormSucess from "./SignupFormSucess";
 
 const Login = () => {
   const [formIsSubmitted, setFormIsSubmitted] = useState(false);
@@ -11,7 +11,11 @@ const Login = () => {
   };
   return (
     <div>
-      {!formIsSubmitted ? <SignupForm submitForm={submitForm} /> : <Homepage />}
+      {!formIsSubmitted ? (
+        <SignupForm submitForm={submitForm} />
+      ) : (
+        <SignupFormSucess />
+      )}
     </div>
   );
 };

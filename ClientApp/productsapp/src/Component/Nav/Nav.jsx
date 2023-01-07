@@ -1,34 +1,51 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Cartcontext } from "../../context/Context";
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaBars, FaTimes } from "react-icons/fa";
 import "./Nav.css";
 
 function Nav() {
+  const [show, setShow] = useState("false");
   const Globalstate = useContext(Cartcontext);
   const state = Globalstate.state;
   // const dispatch = Globalstate.dispatch;
+
   return (
-    <div className="navContainer">
+    <nav>
+      <Link className="navEnd" to="/homepage">
+        Shop
+      </Link>
       <div>
-        <Link to="/homepage">Shop</Link>
+        <ul id="navbar" className={show ? "#navbar" : "#navbar active"}>
+          <li>
+            <Link className="active" to="/">
+              Home
+            </Link>
+          </li>
+          <li>
+            {" "}
+            <Link to="/users">Products</Link>
+          </li>
+          <li>
+            <Link to="/newuser">New Products</Link>
+          </li>
+          <li>
+            <Link to="/cart">
+              <FaShoppingCart backGroundColor="white" fontSize="40px" />
+              {state.length > 0 && (
+                <div className="cart-count">
+                  <span>{state.length}</span>
+                </div>
+              )}
+            </Link>
+          </li>
+        </ul>
       </div>
-      <div>
-        <Link to="/">Home</Link>
-        <Link to="/users">Products</Link>
-        <Link to="/newuser">New Products</Link>
-        <Link to="/signin">Login</Link>
-        <Link to="cart">
-          <FaShoppingCart color="white" fontSize="20px" />
-          {state.length > 0 && (
-            <div className="cart-count">
-              <span>{state.length}</span>
-            </div>
-          )}
-        </Link>
-      </div>
-    </div>
+
+      <button id="mobile" onClick={() => setShow(!show)}>
+        {show ? <FaBars /> : <FaTimes />}
+      </button>
+    </nav>
   );
 }
 

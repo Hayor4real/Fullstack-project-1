@@ -5,7 +5,7 @@ const SignupFormSucess = () => {
   return (
     <div className="container">
       <div className="app-wrapper">
-        <h1 className="form-success">Account Created</h1>
+        <h1 className="form-success">Payment Successful</h1>
       </div>
     </div>
   );

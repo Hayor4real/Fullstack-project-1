@@ -31,11 +31,11 @@ const SignupForm = ({ submitForm }) => {
     <div className="content">
       <div className="app-wrapper">
         <div>
-          <h2 className="title">Create Account</h2>
+          <h2 className="title">Payment details</h2>
         </div>
         <form className="form-wrapper">
           <div className="name">
-            <label className="label">Full Name</label>
+            <label className="label">Name of Card</label>
             <input
               className="input"
               type="text"
@@ -68,7 +68,7 @@ const SignupForm = ({ submitForm }) => {
             {errors.password && <p className="error">{errors.password}</p>}
           </div>
           <div className="submitForm">
-            <button onClick={handleFormSubmit}>Sign Up</button>
+            <button onClick={handleFormSubmit}>Pay</button>
           </div>
         </form>
       </div>

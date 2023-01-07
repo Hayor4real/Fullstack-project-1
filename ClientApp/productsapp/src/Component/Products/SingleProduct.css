@@ -1,0 +1,62 @@
+.singleProduct {
+  display: flex;
+  justify-content: space-between;
+  margin: 100px 100px;
+}
+
+.productInfo {
+  /* border: 1px solid black; */
+  /* width: 70%; */
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+  padding-left: 50px;
+  height: 700px;
+}
+
+.singleProduct img {
+  margin-right: 8em;
+  width: 400px;
+  height: 600px;
+}
+.productInfo h4,
+.price {
+  font-size: 2rem;
+}
+.productInfo h1 {
+  font-size: 2rem;
+}
+.productInfo p {
+  font-size: 1em;
+  margin-right: 20em;
+  padding-bottom: 1em;
+}
+
+.btnValue button {
+  display: flex;
+  /* justify-content: space-evenly; */
+  display: inline-block;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  text-align: center;
+
+  margin-right: 10px;
+}
+button.btnadd,
+button.cart {
+  width: 160px;
+  font-weight: bold;
+  background: white;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 19px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button.btnadd:hover,
+button.cart:hover {
+  background-color: black;
+  color: white;
+}

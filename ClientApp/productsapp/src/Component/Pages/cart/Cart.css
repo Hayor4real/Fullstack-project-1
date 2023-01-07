@@ -20,13 +20,14 @@
   height: 80px;
 }
 .cart p {
-  width: 200px;
+  /* width: 200px; */
   font-size: 14px;
 }
-.quantity {
+table .quantity {
   display: flex;
   margin-right: 130px;
-  width: 20px;
+  width: 1px;
+  /* border: 1px solid black; */
 }
 
 .quantity button {
@@ -58,6 +59,10 @@
 .cart .total {
   text-align: right;
   border-top: 1px solid black;
+}
+
+.total button:hover {
+  cursor: pointer;
 }
 
 .total h2 {

@@ -55,7 +55,7 @@ const Cart = () => {
 
                     <td>
                       {" "}
-                      <p>$ {item.quantity * item.price}</p>
+                      <p>€ {item.quantity * item.price}</p>
                     </td>
 
                     <td>
