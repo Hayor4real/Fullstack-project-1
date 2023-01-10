@@ -36,3 +36,11 @@
   margin-top: 1em;
   margin-right: 1em;
 }
+
+@media screen and(max-width: 799px) {
+  #hero {
+    height: 70vh;
+    padding: 0 80px;
+    background-position: top 30% right 30%;
+  }
+}

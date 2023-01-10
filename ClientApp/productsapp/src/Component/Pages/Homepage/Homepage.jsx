@@ -22,32 +22,36 @@ const Homepage = () => {
   const dispatch = Globalstate.dispatch;
   console.log(Globalstate);
   return (
-    <div className="home">
-      {data.map((item, index) => {
-        item.quantity = 1;
-        return (
-          <div className="card" key={index}>
-            <img src={item.image} alt="" />
-            <p>{item.title}</p>
-            <h3>€{item.price}</h3>
-            <p className="category">{item.category}</p>
-            <p>
+    <div className="PageContainer">
+      <div className="ProductContainer">
+        {data.map((item, index) => {
+          item.quantity = 1;
+          return (
+            <div className="CardProduct" key={index}>
+              <div className="ImgContainerProduct">
+                <img src={item.image} alt="" className="ImgProduct" />
+              </div>
+              <h4 className="TitleProduct">{item.title}</h4>
+              <span className="price">€{item.price}</span>
               Rating {item.rating && item.rating.rate}
-              <AiFillStar />
-            </p>
-            <p>reviews {item.rating.count}</p>
-            {/* <button
+              <AiFillStar color="rgb(243, 181, 25)" fontSize="12px" />
+              <AiFillStar color="rgb(243, 181, 25)" fontSize="12px" />
+              <AiFillStar color="rgb(243, 181, 25)" fontSize="12px" />
+              <p className="category">{item.category}</p>
+              <p>reviews {item.rating.count}</p>
+              {/* <button
               className="btn"
               onClick={() => dispatch({ type: "ADD", payload: item })}
             >
               add to cart
             </button> */}
-            <Link to={`/products/${item.id}`}>
-              <button className="details">Buy Now</button>
-            </Link>
-          </div>
-        );
-      })}
+              <Link to={`/products/${item.id}`}>
+                <button className="details">Buy Now</button>
+              </Link>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

@@ -26,49 +26,45 @@ const SingleProduct = () => {
   const Loading = () => {
     return (
       <>
-        <div className="skeleton" style={{ lineHeight: 2 }}>
-          <Skeleton height={400} />
-        </div>
-        <div>
-          <Skeleton height={50} width={300} />
-          <Skeleton height={75} />
-          <Skeleton height={25} width={150} />
-          <Skeleton height={50} />
-          <Skeleton height={150} />
-          <Skeleton height={50} width={100} />
-          <Skeleton height={50} width={100} style={{ marginLeft: 6 }} />
-        </div>
+        <div style={{ color: "red" }}>loading</div>
       </>
     );
   };
 
   const ShowProduct = () => {
     return (
-      <div className="singleProduct">
+      <div id="prodetails">
         {(item.quantity = 1)};
-        <div className="imgProduct">
-          <img src={item.image} alt={item.title} />
+        <div className="single-pro-image">
+          <img src={item.image} alt={item.title} width="100%" id="MainImg" />
         </div>
-        <div className="productInfo">
-          <h4 className="textCategory">{item.category}</h4>
-          <h1 className="textTitle">{item.title}</h1>
+        <div className="single-pro-details">
+          <h1 className="textCategory">{item.category}</h1>
+          <p>{item.description}</p>
+          <h4 className="textTitle">{item.title}</h4>
           <p className="productStar">
             Rating {item.rating && item.rating.rate}
             <AiFillStar />
           </p>
-          <h3 className="price">€{item.price}</h3>
-          <p className="lead">{item.description}</p>
-          <div className="btnValue">
-            <button
-              className="btnadd"
-              onClick={() => dispatch({ type: "ADD", payload: item })}
-            >
-              add to cart
-            </button>
-            <Link to="/cart">
-              <button className="cart"> Go to Cart</button>
-            </Link>
-          </div>
+          <h2 className="price">€{item.price}</h2>
+
+          <select>
+            <option>Select Size</option>
+            <option>XL</option>
+            <option>XXL</option>
+            <option>Small</option>
+            <option>Large</option>
+          </select>
+
+          <button
+            className="btnadd"
+            onClick={() => dispatch({ type: "ADD", payload: item })}
+          >
+            add to cart
+          </button>
+          <Link to="/cart">
+            <button className="cart"> Go to Cart</button>
+          </Link>
         </div>
       </div>
     );

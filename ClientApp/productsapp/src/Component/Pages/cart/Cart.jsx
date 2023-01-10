@@ -16,19 +16,22 @@ const Cart = () => {
   const Shipping = total + 5;
 
   return (
-    <div className="cart">
+    <div className="ContainerCart">
       {state.length === 0 ? (
-        <h4 className="empty">Cart is Empty</h4>
+        <h4 className="empty" style={{ color: "red" }}>
+          Cart is Empty
+        </h4>
       ) : (
-        <div>
-          <table>
+        <div className="TableContainerCartList">
+          <table className="CartTableCartList">
             <thead>
               <tr>
                 <th>Product</th>
                 <th>Name</th>
                 <th>Category</th>
                 <th>Price</th>
-                <th>Quatity</th>
+                <th>Total</th>
+                <th>Quantity</th>
                 <th>Remove</th>
               </tr>
             </thead>
@@ -37,59 +40,54 @@ const Cart = () => {
               {state.map((item, index) => {
                 return (
                   <tr>
-                    {/* <div className="card" key={index}> */}
                     <td>
-                      {" "}
-                      <img src={item.image} alt="" />
+                      <img
+                        src={item.image}
+                        alt=""
+                        style={{ width: "3rem", height: "3rem" }}
+                      />
                     </td>
 
-                    <td>
-                      {" "}
-                      <p>{item.title}</p>
-                    </td>
+                    <td>{item.title}</td>
 
-                    <td>
-                      {" "}
-                      <p>{item.category}</p>
-                    </td>
+                    <td>{item.category}</td>
 
-                    <td>
-                      {" "}
-                      <p>€ {item.quantity * item.price}</p>
-                    </td>
+                    <td>€{item.price}</td>
 
-                    <td>
-                      <div className="quantity">
-                        <button
-                          onClick={() =>
-                            dispatch({ type: "INCREASE", payload: item })
+                    <td>€ {Math.round(item.quantity * item.price)}</td>
+
+                    <td className="BtnContainerCartItem">
+                      <button
+                        onClick={() =>
+                          dispatch({ type: "INCREASE", payload: item })
+                        }
+                      >
+                        +
+                      </button>
+                      <span className="BtnContainerCartItem">
+                        {item.quantity}
+                      </span>
+                      <button
+                        onClick={() => {
+                          if (item.quantity > 1) {
+                            dispatch({ type: "DECREASE", payload: item });
+                          } else {
+                            dispatch({ type: "REMOVE", payload: item });
                           }
-                        >
-                          +
-                        </button>
-                        <p>{item.quantity}</p>
-                        <button
-                          onClick={() => {
-                            if (item.quantity > 1) {
-                              dispatch({ type: "DECREASE", payload: item });
-                            } else {
-                              dispatch({ type: "REMOVE", payload: item });
-                            }
-                          }}
-                        >
-                          -
-                        </button>
-                      </div>
+                        }}
+                      >
+                        -
+                      </button>
                     </td>
                     <td>
-                      <h2
-                        className="cancel"
+                      <button
+                        className="RemoveBtnCartItem"
                         onClick={() =>
                           dispatch({ type: "REMOVE", payload: item })
                         }
                       >
-                        <AiFillDelete className="delete" />
-                      </h2>
+                        <AiFillDelete />
+                      </button>
                     </td>
                     {/* </div> */}
                   </tr>
@@ -100,21 +98,19 @@ const Cart = () => {
         </div>
       )}
       {state.length > 0 && (
-        <div className="total">
+        <div className="ContainerTotals">
           <Link to="/checkout">
-            <button className="btn">CheckOut</button>
+            <button className="BtnTotals">CheckOut</button>
           </Link>{" "}
-          <div className="totalValue">
-            <div>
-              <span>Subtotal : ${Math.round(total)}</span>
-            </div>
-            <div>
-              <span>Shipping Fee : $5</span>
-            </div>
-            <div>
-              <span>Order Total : ${Math.round(total + Shipping)}</span>
-            </div>
-          </div>
+          <h3>
+            <strong>Subtotal : €{Math.round(total)}</strong>
+          </h3>
+          <h3>
+            <strong>Shipping Fee : €5</strong>
+          </h3>
+          <h3>
+            <strong>Order Total : €{Math.round(total + Shipping)}</strong>
+          </h3>
         </div>
       )}
     </div>

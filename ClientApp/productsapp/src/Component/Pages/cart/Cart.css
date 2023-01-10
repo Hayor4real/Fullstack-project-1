@@ -1,112 +1,114 @@
-.cart {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  padding: 1em;
-  width: 85%;
-
-  border-radius: 5px;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
-
-  margin: 2em auto;
-}
-/* .cart {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-} */
-.cart img {
-  width: 80px;
-  height: 80px;
-}
-.cart p {
-  /* width: 200px; */
-  font-size: 14px;
-}
-table .quantity {
-  display: flex;
-  margin-right: 130px;
-  width: 1px;
-  /* border: 1px solid black; */
-}
-
-.quantity button {
-  font-size: 1em;
-  padding-top: -25px;
-  font-weight: bold;
-  background-color: white;
-  color: black;
-  border: none;
-  margin: 1px 1em;
-
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-.cart .quantity p {
-  padding: 3px 3px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 1em;
-}
-.cart.quantity button {
-  width: 5px;
-
-  text-align: center;
-  background-color: white;
-  color: black;
-  border-radius: 50%;
-  margin: 15px;
-}
-.cart .total {
-  text-align: right;
-  border-top: 1px solid black;
-}
-
-.total button:hover {
-  cursor: pointer;
-}
-
-.total h2 {
-  color: black;
-}
-
-.totalValue div {
-  margin: 5px;
-}
-
-.total .btn {
-  padding: 16px;
-  width: 20%;
-  color: white;
-  font-size: 1em;
-}
-.totalValue div span {
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  width: 20%;
-  /* margin-left: 80rem; */
-  font-size: 20px;
-  text-align: center;
-  color: black;
-}
-
-h2 .cancel {
-  cursor: pointer;
-  margin-right: 6em;
+.TableContainerCartList {
+  width: 100%;
+  margin-top: 9rem;
 }
 
 .empty {
-  text-align: center;
   color: red;
-  font-size: 20px;
+  text-align: center;
+  font-size: 2rem;
 }
-.delete {
+.CartTableCartList {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  font-family: "Rasa", serif;
+  color: #00344b;
+}
+.CartTableCartList thead {
+  text-transform: uppercase;
+  text-align: center;
+}
+.CartTableCartList th {
+  width: 10%;
+}
+.CartTableCartList td {
+  text-align: center;
+  border-bottom: 1px solid #c3c3c3;
+}
+
+.BtnContainerCartItem {
+  display: flex;
+  font-size: 2rem;
+}
+
+.BtnContainerCartItem button {
+  background-color: white;
   color: black;
-  margin: 0 200px;
-  padding: 2px;
+  padding: 1px 0.5px;
+}
+.BtnCartItem {
+  background: transparent;
+  border: 1px solid black;
+  font-size: 1.5rem;
+  width: 30px;
+  outline: none;
+  cursor: pointer;
+}
+.BtnSpanCartItem {
+  margin: 0 1rem;
+}
+.RemoveBtnCartItem {
+  color: black;
   border: none;
   font-size: 1.5rem;
   width: 30px;
   outline: none;
   cursor: pointer;
+  background-color: #ffffff;
+}
+
+.ContainerCart {
+  margin: 5rem 2rem 2rem 2rem;
+  background-color: #ffffff;
+  height: 100%;
+}
+.ContainerTotals {
+  margin: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: "Rasa", serif;
+  color: #00344b;
+}
+.BtnTotals {
+  color: #00344b;
+  border: 2px solid #414141;
+  width: 10rem;
+  padding: 0.5rem 0.5rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  background: transparent;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  outline: none;
+}
+
+.BtnTotals:hover {
+  background: #00344b;
+  color: white;
+  transform: scaleX(1.1) scaleY(1.2);
+}
+.ContainerTotals h3 {
+  margin: 0.5rem 0.5rem;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 649px) {
+  .BtnContainerCartItem {
+    font-size: 0.8rem;
+  }
+  .RemoveBtnCartItem,
+  .BtnCartItem {
+    font-size: 0.8rem;
+  }
+  .BtnSpanCartItem {
+    margin: 0 0;
+  }
+}
+
+@media only screen and (max-width: 569px) {
+  .CartTableCartList {
+    font-size: 0.7rem;
+  }
 }

@@ -1,62 +1,66 @@
-.singleProduct {
+#prodetails {
   display: flex;
-  justify-content: space-between;
-  margin: 100px 100px;
+  margin: 100px auto;
 }
 
-.productInfo {
-  /* border: 1px solid black; */
-  /* width: 70%; */
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
-  padding-left: 50px;
-  height: 700px;
+#prodetails .single-pro-image {
+  width: 20%;
+  margin-right: 50px;
 }
 
-.singleProduct img {
-  margin-right: 8em;
-  width: 400px;
-  height: 600px;
-}
-.productInfo h4,
-.price {
-  font-size: 2rem;
-}
-.productInfo h1 {
-  font-size: 2rem;
-}
-.productInfo p {
-  font-size: 1em;
-  margin-right: 20em;
-  padding-bottom: 1em;
+#prodetails .single-pro-details {
+  width: 50%;
+  padding-top: 30px;
 }
 
-.btnValue button {
+#prodetails .single-pro-details h4 {
+  padding: 40px 0 20px 0;
+}
+#prodetails .single-pro-details h2 {
+  font-size: 26px;
+  color: #088178;
+}
+#prodetails .single-pro-details select {
+  display: block;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+#prodetails .single-pro-details .btnadd,
+#prodetails .single-pro-details .cart {
   display: flex;
-  /* justify-content: space-evenly; */
-  display: inline-block;
-  background-color: white;
-  color: black;
-  border: 1px solid black;
-  text-align: center;
-
-  margin-right: 10px;
-}
-button.btnadd,
-button.cart {
-  width: 160px;
-  font-weight: bold;
-  background: white;
-  color: black;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  margin-bottom: 19px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-button.btnadd:hover,
-button.cart:hover {
-  background-color: black;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px 30px;
+  color: #000;
+  background-color: #fff;
+  width: 200px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.2s;
+  background-color: #088178;
   color: white;
+  margin: 1em;
+
+  text-decoration: none;
+}
+
+#prodetails .single-pro-details h3 {
+  line-height: 25px;
+}
+
+@media (min-width: 481px) and (max-width: 769px) {
+  #prodetails {
+    display: flex;
+    flex-direction: column;
+  }
+  #prodetails .single-pro-image {
+    width: 100%;
+    margin-right: 0px;
+  }
+  #prodetails .single-pro-details {
+    width: 100%;
+  }
 }

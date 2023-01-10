@@ -1,0 +1,34 @@
+.BtnContainerCartItem {
+  font-size: 2rem;
+}
+.BtnCartItem {
+  background: transparent;
+  border: 1px solid black;
+  font-size: 1.5rem;
+  width: 30px;
+  outline: none;
+  cursor: pointer;
+}
+.BtnSpanCartItem {
+  margin: 0 1rem;
+}
+.RemoveBtnCartItem {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  width: 30px;
+  outline: none;
+  cursor: pointer;
+}
+@media only screen and (max-width: 649px) {
+  .BtnContainerCartItem {
+    font-size: 0.8rem;
+  }
+  .RemoveBtnCartItem,
+  .BtnCartItem {
+    font-size: 0.8rem;
+  }
+  .BtnSpanCartItem {
+    margin: 0 0;
+  }
+}

@@ -29,18 +29,21 @@ function Nav() {
           <li>
             <Link to="/newuser">New Products</Link>
           </li>
-          <li>
-            <Link to="/cart">
-              <FaShoppingCart backGroundColor="white" fontSize="40px" />
-              {state.length > 0 && (
-                <div className="cart-count">
-                  <span>{state.length}</span>
-                </div>
-              )}
-            </Link>
-          </li>
         </ul>
       </div>
+
+      <Link to="/cart">
+        <FaShoppingCart
+          className="shoppingCart"
+          backGroundColor="white"
+          fontSize="40px"
+        />
+        {state.length > 0 && (
+          <div className="cart-count">
+            <span>{state.length}</span>
+          </div>
+        )}
+      </Link>
 
       <button id="mobile" onClick={() => setShow(!show)}>
         {show ? <FaBars /> : <FaTimes />}
