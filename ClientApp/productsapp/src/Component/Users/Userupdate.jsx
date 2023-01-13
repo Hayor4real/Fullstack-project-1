@@ -52,9 +52,9 @@ function UpdateUser(props) {
     navigate("/users");
   };
   return (
-    <div className="formContainer">
+    <div className=" auth-form-Container">
       <h2>Update the Product </h2>
-      <div>
+      <div className="reg-form">
         <div>
           <input
             type="text"

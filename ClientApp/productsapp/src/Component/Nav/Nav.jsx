@@ -18,9 +18,10 @@ function Nav() {
       <div>
         <ul id="navbar" className={show ? "#navbar" : "#navbar active"}>
           <li>
-            <Link className="active" to="/">
-              Home
-            </Link>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/blog">Blog</Link>
           </li>
           <li>
             {" "}

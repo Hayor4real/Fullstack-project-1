@@ -1,7 +1,6 @@
 .PageContainer {
-  margin-top: 20rem;
+  margin: 6rem;
 }
-
 .CardProduct {
   width: 100%;
   background-color: FFEFEA;
@@ -11,11 +10,15 @@
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   border-radius: 2rem;
 }
+a.details {
+  background-color: black;
+  color: white;
+}
 .CardProduct a {
   text-decoration: none;
 }
-.ImgContainerProduct img {
-  width: 50%;
+.ImgContainerProduct {
+  width: 100%;
   height: 320px;
   object-fit: cover;
   overflow: hidden;
@@ -46,10 +49,11 @@
   justify-self: center;
   margin-bottom: 0.5rem;
 }
-.CartBtnProduct {
+.CardProduct .details {
   justify-self: center;
   margin-bottom: 1rem;
   color: #00344b;
+  height: 50px;
   border: 2px solid #414141;
   width: 10rem;
   padding: auto 0.5rem;
@@ -59,26 +63,13 @@
   transition-duration: 0.4s;
   cursor: pointer;
   outline: none;
+  /* margin-left: 60px; */
   border-radius: 2rem;
 }
-.CartBtnProduct:hover {
+.CardProduct .details:hover {
   background: transparent;
   /* color: white; */
   transform: scaleX(1.1) scaleY(1.1);
-}
-
-.CartBtnDisableProduct {
-  justify-self: center;
-  margin-bottom: 1rem;
-  color: #00344b;
-  border: 2px solid #414141;
-  width: 10rem;
-  padding: auto 0.5rem;
-  text-transform: uppercase;
-  font-size: 1rem;
-  opacity: 0.6;
-  cursor: not-allowed;
-  border-radius: 2rem;
 }
 
 @media only screen and (max-width: 450px) {

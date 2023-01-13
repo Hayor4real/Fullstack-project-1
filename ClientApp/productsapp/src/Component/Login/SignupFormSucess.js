@@ -3,9 +3,12 @@ import "./Login.css";
 
 const SignupFormSucess = () => {
   return (
-    <div className="container">
-      <div className="app-wrapper">
-        <h1 className="form-success">Payment Successful</h1>
+    <div className="popupSucess">
+      <div className="popup">
+        <img src="https://th.bing.com/th/id/OIP.GwdyMNSl_2OzpoaYXIn2VwHaHY?pid=ImgDet&rs=1" />
+        <h1> Payment Successful, </h1>
+
+        <p>Your order will be delivered in few working days </p>
       </div>
     </div>
   );

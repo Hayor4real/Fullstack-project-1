@@ -33,7 +33,7 @@ const SingleProduct = () => {
 
   const ShowProduct = () => {
     return (
-      <div id="prodetails">
+      <div id="prodetails" class="section-p1">
         {(item.quantity = 1)};
         <div className="single-pro-image">
           <img src={item.image} alt={item.title} width="100%" id="MainImg" />
@@ -44,6 +44,9 @@ const SingleProduct = () => {
           <h4 className="textTitle">{item.title}</h4>
           <p className="productStar">
             Rating {item.rating && item.rating.rate}
+            <AiFillStar />
+            <AiFillStar />
+            <AiFillStar />
             <AiFillStar />
           </p>
           <h2 className="price">€{item.price}</h2>

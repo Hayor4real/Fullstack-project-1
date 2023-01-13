@@ -1,30 +1,50 @@
-h2 {
-  color: lightblue;
-}
-
-.formContainer {
-  width: 1000px;
-  margin: 50px auto;
-  padding: 50px;
-  box-shadow: 0 0 10px black;
+.auth-form-Container h2 {
   text-align: center;
-  height: 700px;
 }
 
-input {
-  padding: 20px;
-  width: 90%;
+.auth-form-Container {
+  display: flex;
+  flex-direction: column;
+  /* box-shadow: 0 0 10px black; */
+  width: 70%;
+
+  margin: 100px auto;
+}
+.auth-form-Container input {
+  margin: 0.5rem 0.5rem;
+  padding: 1rem;
+  border: none;
   border-radius: 10px;
-  outline: none;
 }
-.formContainer div {
-  margin: 2rem;
-}
-
-button {
-  background-color: lightskyblue;
-  width: 90%;
+.auth-form-Container button {
+  border: none;
+  background-color: black;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
   color: white;
-  padding: 15px;
-  border-radius: 10px;
+}
+
+@media (min-width: 481px) and (max-width: 769px) {
+  .auth-form-Container {
+    padding: 5rem;
+    width: 100%;
+    /* box-shadow: 0 0 10px black; */
+    border-radius: 10px;
+    margin: 0.5rem;
+  }
+  .auth-form-Container input {
+    margin: 0.5rem 0;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+  }
+  .auth-form-Container button {
+    border: none;
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+  }
 }

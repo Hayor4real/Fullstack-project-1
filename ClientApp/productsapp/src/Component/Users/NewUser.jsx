@@ -37,9 +37,9 @@ function NewUser(props) {
     navigate("/users");
   };
   return (
-    <div className="formContainer">
+    <div className=" auth-form-Container">
       <h2>Register Product </h2>
-      <div>
+      <div className="reg-form">
         <div>
           <input
             type="text"
@@ -115,7 +115,7 @@ function NewUser(props) {
         </div>
       </div>
       <div>
-        <button onClick={sendDataToServer}>Register New User</button>
+        <button onClick={sendDataToServer}>Register New Product</button>
       </div>
     </div>
   );

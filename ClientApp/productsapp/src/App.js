@@ -12,6 +12,7 @@ import Main from "./Component/About/Main";
 import Login from "./Component/Login/Login";
 import Contact from "./Component/Contact/Contact";
 import SingleProduct from "./Component/Products/SingleProduct";
+import Blog from "./Component/Blog/Blog";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           }
         />
         <Route path="/homepage" element={<Homepage />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/users" element={<Users />} />
         <Route path="/newuser" element={<NewUser />} />

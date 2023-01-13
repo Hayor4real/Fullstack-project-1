@@ -1,60 +1,114 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./Homepage.css";
-import axios from "axios";
-import { AiFillStar } from "react-icons/ai";
 
-import { Cartcontext } from "../../../context/Context";
-import { NavLink } from "react-router-dom";
-import SingleProduct from "../../Products/SingleProduct";
-
-const Homepage = () => {
-  const [data, setdata] = useState([]);
-  const fetchData = async () => {
-    const response = await axios.get("https://fakestoreapi.com/products");
-    setdata(response.data);
-    console.log(data);
-  };
+function Users(props) {
+  const [users, setUsers] = useState([]);
   useEffect(() => {
-    fetchData();
+    getData();
   }, []);
-  const Globalstate = useContext(Cartcontext);
-  const dispatch = Globalstate.dispatch;
-  console.log(Globalstate);
-  return (
-    <div className="home">
-      {data.map((item, index) => {
-        item.quantity = 1;
-        return (
-          <div className="card" key={index}>
-            <img src={item.image} alt="" />
-            <div className="des">
-              <div className="price">€{item.price}</div>
-              <h5>{item.title}</h5>
-              <div className="star">
-                Rating {item.rating && item.rating.rate}
-                <AiFillStar color="rgb(243, 181, 25)" fontSize="12px" />
-                <AiFillStar color="rgb(243, 181, 25)" fontSize="12px" />
-                <AiFillStar color="rgb(243, 181, 25)" fontSize="12px" />
-              </div>
-              <p className="category">{item.category}</p>
-              <p>reviews {item.rating.count}</p>
-            </div>
-            {/* <button
-              className="btn"
-              onClick={() => dispatch({ type: "ADD", payload: item })}
-            >
-              add to cart
-            </button> */}
+  const getData = () => {
+    fetch("http://localhost:4001/users/userdata")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setUsers(data.results);
+      });
+  };
+  const deleteData = (id) => {
+    fetch(`http://localhost:4001/users/delete/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        alert(data.msg);
+        getData();
+      });
+  };
 
-            <Link to={`/products/${item.id}`}>
-              <button className="details">Buy Now</button>
-            </Link>
-          </div>
-        );
-      })}
+  return (
+    <div style={{ padding: "50px" }}>
+      <h2 style={{ color: "black" }}>Users Informations</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
+        quas facere, rem, at nesciunt soluta, commodi cumque quaerat provident
+        quam minus ipsa ab doloribus mollitia repellat laboriosam totam animi
+        maxime sequi nemo adipisci corrupti dolor. Soluta totam numquam a est
+        exercitationem quasi similique, ullam ut tenetur laborum modi delectus,
+        temporibus nulla at perferendis deserunt eligendi unde amet ipsum
+        repellendus. Sit sunt adipisci beatae aperiam iusto architecto tenetur
+        eligendi voluptatem doloremque nostrum. Ea fugiat molestias ullam, sint
+      </p>
+      {/* <button onClick={latestData}>Users</button> */}
+      {users.length > 0 ? (
+        <table
+          cellPadding={10}
+          style={{
+            width: "100%",
+            margin: "50px auto",
+            boxShadow: "0 0 10px green",
+          }}
+        >
+          <thead
+            style={{
+              backgroundColor: "black",
+              padding: "1em",
+              color: "white",
+              marginBottom: "60px",
+            }}
+          >
+            <tr>
+              <th>NAME</th>
+              <th>Price</th>
+              <th>Rating</th>
+              <th>Description</th>
+              <th>Category</th>
+              <th>Supply</th>
+              <th colSpan={3}>Action</th>
+            </tr>
+          </thead>
+
+          <tbody align="center">
+            {users.map((ele, index) => {
+              return (
+                <tr style={{ margin: "60px" }}>
+                  <td>{ele.name}</td>
+                  <td>{ele.price}€</td>
+                  <td>{ele.rating}</td>
+                  <td>{ele.description}</td>
+                  <td>{ele.category}</td>
+                  <td>{ele.supply}</td>
+                  <td>
+                    <Link to={`/userdetails/${ele._id}`}>
+                      <button>Details</button>
+                    </Link>
+                  </td>
+                  <td>
+                    <Link to={`/updateuser/${ele._id}`}>
+                      <button>Edit</button>
+                    </Link>
+                  </td>
+                  <td>
+                    <button
+                      onClick={() => {
+                        deleteData(ele._id);
+                      }}
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      ) : (
+        <div
+          style={{ marginTop: "100px", textAlign: "center", color: "red" }}
+        ></div>
+      )}
     </div>
   );
-};
+}
 
-export default Homepage;
+export default Users;

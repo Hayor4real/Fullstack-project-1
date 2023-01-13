@@ -55,6 +55,12 @@ nav {
 
 .shoppingCart {
   color: white;
+  position: relative;
+  width: max-content;
+  /* margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center; */
 }
 
 #mobile {
@@ -68,23 +74,20 @@ nav {
   display: none;
 }
 
-.cart-count span {
+nav .cart-count span {
   position: absolute;
-  font-size: 15px;
-
-  z-index: 1;
-
-  left: 94%;
-  top: 1%;
-  text-align: center;
-  margin-left: 1.9em;
-
-  background-color: white;
-  color: black;
-
-  width: 25px;
+  display: grid;
+  place-items: center;
+  color: red;
+  z-index: -1;
   border-radius: 50%;
-  display: inline-block;
+  font-size: 17px;
+  font-weight: bold;
+  height: 14px;
+  width: 25px;
+  margin-top: 2px;
+  top: 0;
+  /* right: 100%; */
 }
 
 @media screen and (max-width: 769px) {
@@ -104,6 +107,9 @@ nav {
     padding: 40px 0 0 10px;
     transition: 0.3s ease-in-out;
   }
+  .navEnd {
+    padding: 0px;
+  }
   #navbar li {
     margin-bottom: 25px;
   }
@@ -113,7 +119,8 @@ nav {
   }
   #mobile {
     display: block;
-    font-size: 24px;
+    font-size: 27px;
+    margin-bottom: 2px;
     cursor: pointer;
   }
   .cart-count span {
@@ -132,11 +139,5 @@ nav {
     width: 100%;
     left: 0;
     top: 0;
-  }
-}
-
-@media screen and (max-width: 477px) {
-  .navEnd {
-    padding: 10px 30px;
   }
 }
