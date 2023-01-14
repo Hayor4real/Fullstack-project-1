@@ -53,6 +53,11 @@
   text-decoration: none;
 }
 
+/* #prodetails .single-pro-details .btnadd: {
+  background-color: "red";
+  color: #fff;
+} */
+
 #prodetails .single-pro-details h3 {
   line-height: 25px;
 }
