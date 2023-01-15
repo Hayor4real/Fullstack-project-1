@@ -10,7 +10,7 @@ import Homepage from "./Component/Pages/Homepage/Homepage";
 import CheckOut from "./Component/Checkout/Checkout";
 import Main from "./Component/About/Main";
 import Login from "./Component/Login/Login";
-import Contact from "./Component/Contact/Contact";
+
 import SingleProduct from "./Component/Products/SingleProduct";
 import Blog from "./Component/Blog/Blog";
 
@@ -38,7 +38,6 @@ function App() {
         <Route path="/checkout" element={<CheckOut />} />
         <Route path="/products/:id" element={<SingleProduct />}></Route>
         <Route path="/payment" element={<Login />}></Route>
-        <Route path="/contact" element={<Contact />}></Route>
       </Routes>
     </div>
   );

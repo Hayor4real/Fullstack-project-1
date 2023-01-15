@@ -32,9 +32,11 @@ function Users(props) {
   };
 
   return (
-    <div style={{ padding: "50px" }}>
-      <h2 style={{ color: "black" }}>Users Informations</h2>
-
+    <div>
+      <div className="products">
+        <h2 style={{ color: "white" }}>Products Informations</h2>
+        <p style={{ color: "white" }}>Information about the products</p>
+      </div>
       {/* <button onClick={latestData}>Users</button> */}
       {users.length > 0 ? (
         <div className="TableContainer">

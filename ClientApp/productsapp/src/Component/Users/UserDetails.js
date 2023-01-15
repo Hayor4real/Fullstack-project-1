@@ -1,18 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
-var cardStyle = {
-  width: "80%",
-  padding: "7rem",
-  // border: "1px solid black",
-  margin: "50px auto",
-  boxShadow: "0 0 40px rgba(0, 0, 0, 0.2)",
-  textAlign: "center",
-  height: "200%",
-  color: "black",
-  borderRadius: "30px",
-  backgroundColor: "white",
-};
+import "./UserDetails.css";
 
 const UserDetails = (props) => {
   const [state, setState] = useState([]);
@@ -27,24 +15,21 @@ const UserDetails = (props) => {
       });
   }, []);
   return (
-    <div style={cardStyle}>
+    <div className="SingleContainer">
+      <h2 style={{ textAlign: "center", color: "red", marginBottom: "1em" }}>
+        Single Product Details
+      </h2>
       {state.length > 0 ? (
-        <table
-          cellPadding={10}
-          style={{
-            width: "100%",
-            margin: "50px auto",
-          }}
-        >
+        <table className="SingleTableList">
           <thead
             style={{
-              backgroundColor: "black",
-              padding: "15px",
+              backgroundColor: "#1b2430",
+
               color: "white",
-              marginBottom: "60px",
+              height: "5vh",
             }}
           >
-            <tr style={{ margin: "60px" }}>
+            <tr>
               <th>NAME</th>
               <th>PRICE</th>
               <th>DESCRIPTION</th>

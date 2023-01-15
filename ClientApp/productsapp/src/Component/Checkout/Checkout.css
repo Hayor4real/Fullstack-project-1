@@ -40,3 +40,21 @@ button.submit {
   margin-top: 15px;
   margin-bottom: 30px;
 }
+
+@media (min-width: 481px) and (max-width: 769px) {
+  .app form {
+    padding: 5rem;
+    width: 100%;
+    /* box-shadow: 0 0 10px black; */
+    border-radius: 10px;
+    padding-top: 0;
+    height: 100vh;
+  }
+  .app input form {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+  }
+}
