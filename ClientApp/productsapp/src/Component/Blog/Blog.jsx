@@ -26,7 +26,10 @@ const Blog = () => {
               eveniet nam explicabo. Sit nam odio ducimus ipsa libero illo
               accusamus et laborum minus quo? Repudiandae, magni temporibus?
             </p>
-            <a href="#"> Simply the best</a>
+            <a href="https://react-shopping-items.netlify.app/">
+              {" "}
+              Simply the best
+            </a>
           </div>
         </div>
         <div className="blog-box">
@@ -43,7 +46,10 @@ const Blog = () => {
               distinctio dolorem rerum accusamus. Asperiores vel eveniet
               perspiciatis, ipsam aperiam ad recusandae impedit!
             </p>
-            <a href="#"> Simply the best</a>
+            <a href="https://hayor4real.github.io/Ecommerce-website/">
+              {" "}
+              Simply the best
+            </a>
           </div>
         </div>
         <div className="blog-box">

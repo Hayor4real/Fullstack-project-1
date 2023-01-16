@@ -36,10 +36,15 @@
 }
 
 #blog .blog-details a {
-  text-decoration: none;
+  /* text-decoration: none; */
   font-size: 11px;
-  color: black;
+  color: blue;
   font-weight: 900;
+}
+#blog .blog-details a:hover {
+  /* text-decoration: none; */
+  font-size: 15px;
+  color: red;
 }
 
 @media (min-width: 481px) and (max-width: 769px) {
