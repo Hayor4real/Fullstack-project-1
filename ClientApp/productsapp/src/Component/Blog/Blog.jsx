@@ -46,7 +46,10 @@ const Blog = () => {
               distinctio dolorem rerum accusamus. Asperiores vel eveniet
               perspiciatis, ipsam aperiam ad recusandae impedit!
             </p>
-            <a href="https://hayor4real.github.io/Ecommerce-website/">
+            <a
+              href="https://hayor4real.github.io/Ecommerce-website/"
+              target="blank"
+            >
               {" "}
               Simply the best
             </a>
@@ -54,7 +57,10 @@ const Blog = () => {
         </div>
         <div className="blog-box">
           <div className="blog-img">
-            <img src="https://i.pinimg.com/originals/3b/68/3d/3b683db1918bdce2f72925c81720d3dc.jpg" />
+            <img
+              src="https://i.pinimg.com/originals/3b/68/3d/3b683db1918bdce2f72925c81720d3dc.jpg"
+              target="blank"
+            />
           </div>
           <div className="blog-details">
             <h4>Fashion Trend</h4>
