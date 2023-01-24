@@ -38,7 +38,7 @@ function NewUser(props) {
   };
   return (
     <div className=" auth-form-Container">
-      <h2>Register Product </h2>
+      <h4>Register Product </h4>
       <div className="reg-form">
         <div>
           <input

@@ -16,9 +16,9 @@ const UserDetails = (props) => {
   }, []);
   return (
     <div className="SingleContainer">
-      <h2 style={{ textAlign: "center", color: "red", marginBottom: "1em" }}>
+      <h4 style={{ textAlign: "center", color: "red", marginBottom: "1em" }}>
         Single Product Details
-      </h2>
+      </h4>
       {state.length > 0 ? (
         <table className="SingleTableList">
           <thead

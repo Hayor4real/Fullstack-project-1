@@ -108,7 +108,8 @@ nav .cart-count span {
     transition: 0.3s ease-in-out;
   }
   .navEnd {
-    padding: 0px;
+    padding: 0;
+    margin-left: -40px;
   }
   #navbar li {
     margin-bottom: 25px;

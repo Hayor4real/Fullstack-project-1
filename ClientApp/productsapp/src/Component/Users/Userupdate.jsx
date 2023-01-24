@@ -53,7 +53,7 @@ function UpdateUser(props) {
   };
   return (
     <div className=" auth-form-Container">
-      <h2>Update the Product </h2>
+      <h4>Update the Product </h4>
       <div className="reg-form">
         <div>
           <input
