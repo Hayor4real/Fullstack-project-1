@@ -8,7 +8,8 @@
 }
 .title {
   text-align: center;
-  color: red;
+  color: #f80759;
+  margin-top: 4rem;
 }
 .submitForm button {
   display: flex;
@@ -38,42 +39,19 @@ button:active {
   margin: auto auto;
 }
 
-.popupSucess .popup {
-  width: 400px;
-  background-color: #fff;
-  border-radius: 6px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-
-  transition: transform 0.4s, top 0.4s;
-}
-
-.popup img {
-  width: 100px;
-  margin-top: -50px;
-  border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-.popup h2 {
-  font-size: 38px;
-  font-weight: 500;
-  margin: 30px 0 10px;
-}
-
 .label {
   font-size: 20px;
 }
-@media (min-width: 481px) and (max-width: 769px) {
+
+@media only screen and (max-width: 761px) {
   .form-wrapper {
-    margin: 30px 50px;
+    margin: auto auto;
   }
-  .form-wrapper input {
-    width: 300px;
+  .form-wrapper {
+    width: 100%;
   }
   .submitForm button {
     padding: 10px 20px;
-    width: 70%;
+    width: 40%;
   }
 }
