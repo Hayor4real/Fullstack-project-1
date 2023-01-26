@@ -31,7 +31,7 @@ const SignupForm = ({ submitForm }) => {
     <div className="content">
       <div className="app-wrapper">
         <div>
-          <h2 className="title">Payment details</h2>
+          <h3 className="title">Payment details</h3>
         </div>
         <form className="form-wrapper">
           <div className="name">
