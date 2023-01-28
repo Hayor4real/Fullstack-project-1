@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+import { baseUrl } from "../Utility/contant";
 
 function Products() {
   const [state, setState] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4001/productdb")
+    fetch(`${baseUrl}productdb`)
       .then((res) => {
         return res.json();
       })
