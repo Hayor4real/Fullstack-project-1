@@ -6,9 +6,9 @@ import Nav from "./Component/Nav/Nav";
 import UserDetails from "./Component/Users/UserDetails";
 import UpdateUser from "./Component/Users/Userupdate";
 import Cart from "./Component/Pages/cart/Cart";
-import Homepage from "./Component/Pages/Homepage/Homepage";
+import Shoppage from "./Component/Pages/Shoppage/Shop-page";
 import CheckOut from "./Component/Checkout/Checkout";
-import Main from "./Component/About/Main";
+import Main from "./Component/Homepage/Homepage";
 import Login from "./Component/Login/Login";
 
 import SingleProduct from "./Component/Products/SingleProduct";
@@ -28,7 +28,8 @@ function App() {
             </div>
           }
         />
-        <Route path="/homepage" element={<Homepage />} />
+
+        <Route path="/shoppage" element={<Shoppage />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/users" element={<Users />} />
