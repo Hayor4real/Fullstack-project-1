@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaArrowUp, FaArrowDown } from "react-icons/fa";
 import { AiTwotoneDelete } from "react-icons/ai";
 import { BiEditAlt } from "react-icons/bi";
+import { baseUrl } from "../../Utility/contant";
 
 import { TbListDetails } from "react-icons/tb";
 import "./Users.css";
@@ -50,7 +51,7 @@ function Users(props) {
     getData();
   }, []);
   const getData = () => {
-    fetch("http://localhost:4001/users/userdata")
+    fetch(`${baseUrl}users/userdata`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -59,7 +60,7 @@ function Users(props) {
   };
 
   const deleteData = (id) => {
-    fetch(`http://localhost:4001/users/delete/${id}`, {
+    fetch(`${baseUrl}users/delete/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

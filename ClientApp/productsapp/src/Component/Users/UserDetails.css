@@ -23,3 +23,9 @@
     width: 100%;
   }
 }
+@media only screen and (max-width: 451px) {
+  .SingleTableList {
+    font-size: 0.6rem;
+    width: 100%;
+  }
+}

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import SignupForm from "./SignupForm";
 import { Cartcontext } from "../../context/Context";
 
-import Homepage from "../Pages/Homepage/Homepage";
+import Homepage from "../Pages/Shoppage/Shop-page";
 import SignupFormSucess from "./SignupFormSucess";
 
 const Login = () => {

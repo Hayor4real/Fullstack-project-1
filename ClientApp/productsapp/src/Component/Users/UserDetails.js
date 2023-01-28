@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./UserDetails.css";
+import { baseUrl } from "../../Utility/contant";
 
 const UserDetails = (props) => {
   const [state, setState] = useState([]);
   const { id } = useParams();
   useEffect(() => {
-    fetch(`http://localhost:4001/users/specificuser/${id}`)
+    fetch(`${baseUrl}users/specificuser/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

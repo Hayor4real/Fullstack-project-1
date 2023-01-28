@@ -98,7 +98,7 @@
   margin: 0.5rem 0.5rem;
   text-transform: uppercase;
 }
-@media only screen and (max-width: 649px) {
+@media only screen and (max-width: 667px) {
   .BtnContainerCartItem {
     font-size: 0.8rem;
   }
@@ -113,6 +113,9 @@
 
 @media only screen and (max-width: 569px) {
   .CartTableCartList {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
+  }
+  .BtnContainerCartItem span {
+    margin-top: 14px;
   }
 }

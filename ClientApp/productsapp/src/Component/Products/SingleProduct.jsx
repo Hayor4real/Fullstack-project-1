@@ -53,7 +53,7 @@ const SingleProduct = () => {
     return (
       <>
         <div id="prodetails" class="section-p1">
-          {(item.quantity = 1)};
+          {(item.quantity = 1)}
           <div className="single-pro-image">
             <img src={item.image} alt={item.title} width="100%" id="MainImg" />
           </div>

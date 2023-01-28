@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./NewUser.css";
 import { useNavigate } from "react-router-dom";
+import { baseUrl } from "../../Utility/contant";
 
 function NewUser(props) {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ function NewUser(props) {
   });
 
   const sendDataToServer = () => {
-    fetch("http://localhost:4001/users/newuser", {
+    fetch(`${baseUrl}users/newuser`, {
       method: "POST",
       body: JSON.stringify(newuser),
       headers: {

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./NewUser.css";
 import { useParams, useNavigate } from "react-router-dom";
+import { baseUrl } from "../../Utility/contant";
 
 function UpdateUser(props) {
   const { id } = useParams();
@@ -14,7 +15,7 @@ function UpdateUser(props) {
     supply: "",
   });
   useEffect(() => {
-    fetch(`http://localhost:4001/users/specificuser/${id}`)
+    fetch(`${baseUrl}/users/specificuser/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -29,7 +30,7 @@ function UpdateUser(props) {
       });
   }, []);
   const sendData = () => {
-    fetch(`http://localhost:4001/users/updateuser/${id}`, {
+    fetch(`${baseUrl}users/updateuser/${id}`, {
       method: "PUT",
       body: JSON.stringify(user),
       headers: {

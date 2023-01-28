@@ -65,7 +65,22 @@
   line-height: 25px;
 }
 
-@media only screen and (max-width: 761px) {
+/* @media only screen and (max-width: 667px) {
+  #prodetails {
+    margin-top: 6em;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #prodetails .single-pro-image {
+    width: 100%;
+    margin-right: 0px;
+  }
+  /* #prodetails .single-pro-details {
+    width: 50%;
+  } */
+
+@media screen and (max-width: 677px) {
   #prodetails {
     display: flex;
     flex-direction: column;

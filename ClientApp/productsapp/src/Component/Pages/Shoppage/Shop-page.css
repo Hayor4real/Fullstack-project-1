@@ -72,9 +72,9 @@ a.details {
   transform: scaleX(1.1) scaleY(1.1);
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 667px) {
   .PageContainer {
-    margin: 0.2rem;
+    margin: 8rem 2rem;
   }
 }
 .ProductContainer {

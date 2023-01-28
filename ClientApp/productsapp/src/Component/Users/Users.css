@@ -12,7 +12,7 @@
 
 .TableContainer {
   width: 100%;
-  margin-top: 1pxs;
+  margin-top: 1px;
 }
 .TableList {
   width: 100%;
@@ -67,5 +67,18 @@
   .TableList thead th {
     padding-right: 7px;
     width: 100%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .TableList {
+    font-size: 0.6rem;
+    width: 100%;
+  }
+  .TableList thead th {
+    padding-right: 7px;
+    width: 100%;
+  }
+  .products {
+    margin-top: 1em;
   }
 }

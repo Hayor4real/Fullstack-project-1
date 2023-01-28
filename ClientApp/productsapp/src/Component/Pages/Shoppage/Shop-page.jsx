@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./Homepage.css";
+import "./Shop-page.css";
 // import axios from "axios";
 // axios.get
 import Footer from "../../Footer/Footer";

@@ -12,7 +12,7 @@ function Nav() {
 
   return (
     <nav>
-      <Link className="navEnd" to="/homepage">
+      <Link className="navEnd" to="/shoppage">
         Shop
       </Link>
       <div>
