@@ -43,6 +43,30 @@ button:active {
   font-size: 20px;
 }
 
+.popupSucess .popup {
+  width: 400px;
+  background-color: #fff;
+  border-radius: 6px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+
+  transition: transform 0.4s, top 0.4s;
+}
+
+.popup img {
+  width: 100px;
+  margin-top: -50px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.popup h2 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 30px 0 10px;
+}
+
 @media only screen and (max-width: 761px) {
   .form-wrapper {
     margin: auto auto;
@@ -53,5 +77,19 @@ button:active {
   .submitForm button {
     padding: 10px 20px;
     width: 40%;
+  }
+}
+@media only screen and (max-width: 451px) {
+  .popup img {
+    width: 20%;
+    margin: auto 150px;
+  }
+  .popup h1,
+  p {
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+    margin: 10px;
+    padding-right: 2px;
   }
 }
