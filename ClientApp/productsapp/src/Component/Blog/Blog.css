@@ -36,18 +36,35 @@
 }
 
 #blog .blog-details a {
-  /* text-decoration: none; */
   font-size: 11px;
   color: blue;
   font-weight: 900;
 }
 #blog .blog-details a:hover {
-  /* text-decoration: none; */
   font-size: 15px;
   color: red;
 }
 
-@media (min-width: 481px) and (max-width: 769px) {
+@media only screen and (max-width: 761px) {
+  #blog {
+    padding: 100px 20px 0 20px;
+  }
+  #blog .blog-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  #blog .blog-img {
+    width: 100%;
+    margin-right: 7px;
+    margin-bottom: 30px;
+  }
+  #blog .blog-details {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 461px) {
   #blog {
     padding: 100px 20px 0 20px;
   }
