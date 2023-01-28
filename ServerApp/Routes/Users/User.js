@@ -3,6 +3,7 @@ var { MongoClient, ObjectId } = require("mongodb");
 const dbname = "test";
 const collectionname = "products";
 
+// database
 var dburl =
   "mongodb+srv://userperson:October18@cluster0.udsj0gg.mongodb.net/?retryWrites=true&w=majority";
 
