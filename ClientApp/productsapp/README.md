@@ -1,4 +1,4 @@
-# Car Rental Application
+# Ecommerce Application
 
 This repository contains a fullstack ecommerce application using React for the frontend .An external database is used and connected to via fetch API and responds completely to user interaction while backend is node, express js and mongoose for managing mongodb.
 
