@@ -1,8 +1,6 @@
-# Fullstack-project-1
+# Car Rental Application
 
-A fullstack ecommerce application using React for the frontend .An external database is used and
-connected to via fetch API and responds completely to user interaction while backend is node, express js
-and mongoose for managing mongodb. 
+This repository contains a fullstack ecommerce application using React for the frontend .An external database is used and connected to via fetch API and responds completely to user interaction while backend is node, express js and mongoose for managing mongodb.
 
 **Features**
 
@@ -10,17 +8,17 @@ and mongoose for managing mongodb.
 2. Checkout
 3. Footer
 4. Homepage
-5. Images
+5. images
 6. Login
 7. Nav
 8. Pages
 9. Products
 10. Users
 11. Products
-12. Users
-13. Products
 
-working Demo  https://my-ecommerce-application-website.onrender.com/
-Clone the repo and install the dependencies by running "npm install" on the root folder.
-From the productsapp folder run "npm run dev"
+[working Demo](https://my-ecommerce-application-website.onrender.com/)
 
+### Instructions
+
+1. Clone the repo and run `npm install`
+2. From the car-rental folder run `npm run dev`
