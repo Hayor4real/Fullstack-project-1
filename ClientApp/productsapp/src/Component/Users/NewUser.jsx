@@ -15,7 +15,7 @@ function NewUser(props) {
   });
 
   const sendDataToServer = () => {
-    fetch(`${baseUrl} users/newuser`, {
+    fetch(`${baseUrl}users/newuser`, {
       method: "POST",
       body: JSON.stringify(newuser),
       headers: {

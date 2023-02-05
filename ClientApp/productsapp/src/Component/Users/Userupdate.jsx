@@ -15,7 +15,7 @@ function UpdateUser(props) {
     supply: "",
   });
   useEffect(() => {
-    fetch(`${baseUrl}/users/specificuser/${id}`)
+    fetch(`${baseUrl}users/specificuser/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
